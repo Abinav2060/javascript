@@ -32,3 +32,20 @@ function decreaseAge() {
 
 document.getElementById("increaseAgeButton").addEventListener("click", increaseAge);
 document.getElementById("decreaseAgeButton").addEventListener("click", decreaseAge);
+
+// function to update age from input
+function updateName() {
+    let newName = document.getElementById("nameInput").value;
+    if (newName.trim() !== "") {
+        characterName = newName;
+        displayDescription();
+    }
+}
+
+function updateAge() {
+    let newAge = parseInt(document.getElementById("ageInput").value);
+    if (!isNaN(newAge) && newAge > 0) {
+        age = newAge;
+        displayDescription();
+    }
+}
