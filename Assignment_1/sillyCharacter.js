@@ -51,3 +51,6 @@ function updateAge() {
 }
 document.getElementById("updateNameButton").addEventListener("click", updateName);
 document.getElementById("updateAgeButton").addEventListener("click", updateAge);
+
+// showing initial character 
+displayDescription();
