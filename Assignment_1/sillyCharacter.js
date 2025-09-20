@@ -15,3 +15,6 @@ if (isSuperhero) {
     return `Meet ${characterName}, a ${age}-year-old ${heroStatus} 
             who loves ${favoriteFood} and can ${randomPower}!`;
 }
+function displayDescription() {
+    document.getElementById("characterDescription").textContent = generateDescription();
+}
