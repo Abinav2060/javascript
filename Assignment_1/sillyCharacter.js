@@ -18,3 +18,17 @@ if (isSuperhero) {
 function displayDescription() {
     document.getElementById("characterDescription").textContent = generateDescription();
 }
+document.getElementById("generateButton").addEventListener("click", displayDescription);
+
+function increaseAge() {
+    age++;
+    displayDescription();
+}
+
+function decreaseAge() {
+    if (age > 0) age--;
+    displayDescription();
+}
+
+document.getElementById("increaseAgeButton").addEventListener("click", increaseAge);
+document.getElementById("decreaseAgeButton").addEventListener("click", decreaseAge);
