@@ -22,3 +22,34 @@ document.getElementById("part2").addEventListener("click", () => cycleOption(1, 
 document.getElementById("part3").addEventListener("click", () => cycleOption(2, part3Options));
 document.getElementById("part4").addEventListener("click", () => cycleOption(3, part4Options));
 document.getElementById("part5").addEventListener("click", () => cycleOption(4, part5Options));
+
+// Show the full story
+document.getElementById("showStory").addEventListener("click", () => {
+    const story = choices.join(" ");
+    document.getElementById("storyOutput").textContent = story;
+});
+
+// Random story
+document.getElementById("randomStory").addEventListener("click", () => {
+    choices[0] = part1Options[Math.floor(Math.random() * part1Options.length)];
+    choices[1] = part2Options[Math.floor(Math.random() * part2Options.length)];
+    choices[2] = part3Options[Math.floor(Math.random() * part3Options.length)];
+    choices[3] = part4Options[Math.floor(Math.random() * part4Options.length)];
+    choices[4] = part5Options[Math.floor(Math.random() * part5Options.length)];
+
+    for (let i = 0; i < 5; i++) {
+        document.getElementById(`part${i + 1}`).textContent = choices[i];
+    }
+
+    document.getElementById("storyOutput").textContent = choices.join(" ");
+});
+
+// Reset story
+document.getElementById("reset").addEventListener("click", () => {
+    choices = ["", "", "", "", ""];
+    indices = [0, 0, 0, 0, 0];
+    for (let i = 0; i < 5; i++) {
+        document.getElementById(`part${i + 1}`).textContent = `Part ${i + 1}`;
+    }
+    document.getElementById("storyOutput").textContent = "";
+});
