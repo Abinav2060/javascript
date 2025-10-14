@@ -28,7 +28,7 @@ document.getElementById("part5").addEventListener("click", () => cycleOption(4, 
 document.getElementById("showStory").addEventListener("click", () => {
     const story = choices.join(" ");
     document.getElementById("storyOutput").textContent = story;
-    speakStory(story); // <-- audio added here
+    speakStory(story); 
 });
 
 // Random story for displaying and speaking
