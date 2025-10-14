@@ -45,7 +45,7 @@ document.getElementById("randomStory").addEventListener("click", () => {
 
     const story = choices.join(" ");
     document.getElementById("storyOutput").textContent = story;
-    speakStory(story); // <-- audio added here
+    speakStory(story); 
 });
 
 // reset story
