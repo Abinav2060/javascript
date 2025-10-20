@@ -1,22 +1,26 @@
- // getting references to DOM elements 
+
+//geting references to the sliders
 const redSlider = document.getElementById("red");
 const greenSlider = document.getElementById("green");
 const blueSlider = document.getElementById("blue");
-const body = document.querySelector("html");
 
-// using function to update background color 
+//geting reference to the HTML element (the background is styled there)
+const htmlElement = document.documentElement;
+
+//creating a function to update the background color
 function updateBackgroundColor() {
   const red = redSlider.value;
   const green = greenSlider.value;
   const blue = blueSlider.value;
 
-  // applying the color to the page background
-  body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+  // the key line that updates the color
+  htmlElement.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
-// attaching event listeners
+// adding event listeners for when slider values change
 redSlider.addEventListener("input", updateBackgroundColor);
 greenSlider.addEventListener("input", updateBackgroundColor);
 blueSlider.addEventListener("input", updateBackgroundColor);
 
+// setting an initial color when the page loads
 updateBackgroundColor();
