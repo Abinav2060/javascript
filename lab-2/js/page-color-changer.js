@@ -18,3 +18,5 @@ function updateBackgroundColor() {
 redSlider.addEventListener("input", updateBackgroundColor);
 greenSlider.addEventListener("input", updateBackgroundColor);
 blueSlider.addEventListener("input", updateBackgroundColor);
+
+updateBackgroundColor();
