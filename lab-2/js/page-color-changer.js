@@ -13,3 +13,8 @@ function updateBackgroundColor() {
   // applying the color to the page background
   body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
+
+// attaching event listeners
+redSlider.addEventListener("input", updateBackgroundColor);
+greenSlider.addEventListener("input", updateBackgroundColor);
+blueSlider.addEventListener("input", updateBackgroundColor);
