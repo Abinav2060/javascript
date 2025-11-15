@@ -66,3 +66,6 @@ calculatePrice();{
 
   return total.toFixed(2);
 }
+const savedName = $("#customerName").value;
+$("#order-form").reset();
+$("#customerName").value = savedName;
