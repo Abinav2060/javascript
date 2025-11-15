@@ -14,6 +14,26 @@ class Smoothie {
   
     return `${this.name} ordered a ${this.size} smoothie with ${this.base}, ${fruitText}, and ${extraText}.`;
   }
+
+  calculatePrice() {
+    const priceList = {
+      size: { small: 4.0, medium: 5.5, large: 7.0 },
+      fruits: { banana: 0.5, strawberry: 0.7, mango: 0.8, blueberry: 0.9 },
+      extras: { protein: 1.5, honey: 0.5, chia: 0.7 }
+    };
+
+    let total = priceList.size[this.size];
+
+    this.fruits.forEach(f => {
+      total += priceList.fruits[f] || 0;
+    });
+
+    this.extras.forEach(e => {
+      total += priceList.extras[e] || 0;
+    });
+
+    return total.toFixed(2);
+  }
 }
 
 const $ = (x) => document.querySelector(x);
@@ -22,12 +42,8 @@ function gatherData() {
   const name = $("#customerName").value;
   const base = document.querySelector("input[name='base']:checked").value;
 
-  const fruits = [...document.querySelectorAll("input[name='fruits']:checked")]
-    .map(x => x.value);
-
-  const extras = [...document.querySelectorAll("input[name='extras']:checked")]
-    .map(x => x.value);
-
+  const fruits = [...document.querySelectorAll("input[name='fruits']:checked")].map(x => x.value);
+  const extras = [...document.querySelectorAll("input[name='extras']:checked")].map(x => x.value);
   const size = $("#size").value;
 
   return { name, base, fruits, size, extras };
@@ -45,27 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
     showOutput(`${smoothie.description()} <br><strong>Total: $${smoothie.calculatePrice()}</strong>`);
 
     console.log(smoothie);
+
+    // Reset form but keep name
+    const savedName = $("#customerName").value;
+    $("#order-form").reset();
+    $("#customerName").value = savedName;
   });
 });
-priceList = {
-  size: { small: 4.0, medium: 5.5, large: 7.0 },
-  fruits: { banana: 0.5, strawberry: 0.7, mango: 0.8, blueberry: 0.9 },
-  extras: { protein: 1.5, honey: 0.5, chia: 0.7 }
-};
-
-calculatePrice();{
-  let total = this.priceList.size[this.size];
-
-  this.fruits.forEach(f => {
-    total += this.priceList.fruits[f] || 0;
-  });
-
-  this.extras.forEach(e => {
-    total += this.priceList.extras[e] || 0;
-  });
-
-  return total.toFixed(2);
-}
-const savedName = $("#customerName").value;
-$("#order-form").reset();
-$("#customerName").value = savedName;
