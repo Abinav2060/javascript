@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoothie Order Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="container">
+    <h1>Order Your Smoothie</h1>
+
+    <form id="order-form">
+
+      <fieldset>
+        <legend>Your Name</legend>
+        <input type="text" id="customerName" placeholder="Enter your name" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Choose Base</legend>
+        <label><input type="radio" name="base" value="milk" checked> Milk</label>
+        <label><input type="radio" name="base" value="yogurt"> Yogurt</label>
+        <label><input type="radio" name="base" value="almond milk"> Almond Milk</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Fruits</legend>
+        <label><input type="checkbox" name="fruits" value="banana"> Banana</label>
+        <label><input type="checkbox" name="fruits" value="strawberry"> Strawberry</label>
+        <label><input type="checkbox" name="fruits" value="mango"> Mango</label>
+        <label><input type="checkbox" name="fruits" value="blueberry"> Blueberry</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Size & Extras</legend>
+        <select id="size">
+          <option value="small">Small</option>
+          <option value="medium" selected>Medium</option>
+          <option value="large">Large</option>
+        </select>
+
+        <label><input type="checkbox" name="extras" value="protein"> Protein Powder</label>
+        <label><input type="checkbox" name="extras" value="honey"> Honey</label>
+        <label><input type="checkbox" name="extras" value="chia"> Chia Seeds</label>
+      </fieldset>
+
+      <button type="button" id="orderBtn">Order Smoothie</button>
+    </form>
+
+    <section id="output"></section>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
