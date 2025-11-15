@@ -9,9 +9,9 @@ class Smoothie {
   }
 
   description() {
-    const fruitText = this.fruits.length ? this.fruits.join(", ") : "no fruits";
-    const extraText = this.extras.length ? this.extras.join(", ") : "no extras";
-
+    const fruitText = this.fruits.join(", ") || "no fruits";
+    const extraText = this.extras.join(", ") || "no extras";
+  
     return `${this.name} ordered a ${this.size} smoothie with ${this.base}, ${fruitText}, and ${extraText}.`;
   }
 }
@@ -42,7 +42,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const d = gatherData();
     const smoothie = new Smoothie(d.name, d.base, d.fruits, d.size, d.extras);
 
-    showOutput(smoothie.description());
+    showOutput(`${smoothie.description()} <br><strong>Total: $${smoothie.calculatePrice()}</strong>`);
+
     console.log(smoothie);
   });
 });
+priceList = {
+  size: { small: 4.0, medium: 5.5, large: 7.0 },
+  fruits: { banana: 0.5, strawberry: 0.7, mango: 0.8, blueberry: 0.9 },
+  extras: { protein: 1.5, honey: 0.5, chia: 0.7 }
+};
+
+calculatePrice();{
+  let total = this.priceList.size[this.size];
+
+  this.fruits.forEach(f => {
+    total += this.priceList.fruits[f] || 0;
+  });
+
+  this.extras.forEach(e => {
+    total += this.priceList.extras[e] || 0;
+  });
+
+  return total.toFixed(2);
+}
