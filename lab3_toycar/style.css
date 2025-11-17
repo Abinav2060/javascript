@@ -8,3 +8,10 @@ h1 {
   color: #333;
   text-align: center;
 }
+.car-card {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
