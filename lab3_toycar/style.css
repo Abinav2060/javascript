@@ -15,3 +15,20 @@ h1 {
   border-radius: 5px;
   margin-top: 15px;
 }
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #c60907;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #a20806;
+}
+#carContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
