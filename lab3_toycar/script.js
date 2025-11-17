@@ -20,3 +20,14 @@ function displayCar(car) {
   `;
   container.appendChild(div);
 }
+document.getElementById('addCarBtn').addEventListener('click', function() {
+  const toyCar = new ToyCar(
+    'Ferrari SF90 Stradale',
+    '1:18',
+    'Red',
+    'Hot Wheels',
+    199.99,
+    false
+  );
+  displayCar(toyCar);
+});
